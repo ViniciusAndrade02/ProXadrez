@@ -1,0 +1,132 @@
+@media (max-width: 1100px){
+
+  #container {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+}
+
+/*
+
+
+@media (max-width: 1262px) {
+
+  .direito{
+
+    top: 0.7rem;
+    left: 3rem;
+    height: 96vh !important;
+  }
+
+  .tabuleiro{
+
+    max-height: 100% !important;
+    width: 54vw !important;
+    left:2rem;
+    top: -0.47rem !important;
+  }
+  
+  .BorderBox{
+  
+    height: 98vh !important;
+    max-height: 100% ;
+    max-width: 100% !important;
+  }
+  
+  .play{
+  
+    height: 22.9rem !important;
+    width: 22.8rem !important;
+  }
+
+  .OpcaodeLance{
+
+
+    height: 10vh;
+    max-width: 85%;
+    border-radius: 0 0 10px 10px;
+    top: 15.5rem;
+    left: 2.8rem;
+  }
+}
+
+@media (max-width: 1260px){
+
+    .direito{
+      left: 2.5rem;
+    }
+
+    .tabuleiro{
+      left:2rem;
+    }
+    
+    .BorderBox{
+    
+      height: 98vh !important;
+      max-height: 100% ;
+      max-width: 100% !important;
+    }
+  }
+
+  @media (max-width: 1230px){
+
+    .direito{
+
+      top: 0.7rem;
+      left: 1.5rem;
+      height: 96vh !important;
+    }
+
+    .tabuleiro{
+
+      max-height: 100% !important;
+      width: 56vw !important;
+      left:0.6rem;
+      top: -0.47rem !important;
+    }
+
+    .BorderBox{
+  
+      height: 99vh !important;
+      max-height: 100% ;
+      max-width: 100% !important;
+    }
+
+  }
+
+  @media (max-width: 1200px){
+
+    #container {
+      display: grid;
+      grid-template-columns: 1fr;
+      justify-items: center;
+    }
+
+    .direito{
+
+      grid-row: 1;
+      height: 96vh !important;
+      width: 150vw !important;
+    }
+
+
+    .tabuleiro{
+
+      max-height: 100% !important;
+      width: 54vw !important;
+      top: -0.47rem !important;
+    }
+    
+    .BorderBox{
+    
+      height: 98vh !important;
+      max-height: 100% ;
+      max-width: 100% !important;
+    }
+
+    
+  }
+
+
+  */

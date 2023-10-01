@@ -1,0 +1,19 @@
+
+.evaluation-bar {
+  width: 345px;
+  height: 12px;
+  background-color: #000;
+  border-radius: 10px;
+  overflow: hidden;
+  transform: rotate(270deg);
+  margin-left: -11.5rem;
+  position: relative;
+  top: -11.5rem;
+}
+
+.evaluation-fill {
+  height: 100%;
+  width: 0;
+  background-color: #ddd;
+  transition: width 0.3s ease;
+}

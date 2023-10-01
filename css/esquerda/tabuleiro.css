@@ -1,0 +1,101 @@
+
+#areaTabuleiro{
+
+  height: 80vh;
+  max-width: 100%;
+
+}
+
+.tabuleiro{
+
+  width: 48vw !important;
+  height: 105vh !important;
+  position: relative;
+  left:0rem;
+  background-color: #8D7B68;
+}
+
+.BorderBox{
+
+
+  background-color: transparent !important;
+  height: 90vh !important;
+  padding-right: 10px;
+  max-width: 100% !important;
+
+}
+
+.play{
+
+  background-color: #4c3726 !important;
+  height: 21.7rem !important;
+  width: 21.5rem !important;
+  border-radius: 0px !important;
+  position: relative;
+  top: -1rem !important;
+  left: 2rem;
+  box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.5); /* Define a sombra */
+}
+
+.cb > .l {
+  background: #F0D9B5;
+}
+
+.cb > .d {
+  background: #B58863;
+}
+
+.letra-tabuleiro{
+  position: relative;
+  top: -1px;
+  font-size: 8px;
+}
+.inverter{
+  position: relative;
+  top: -6px;
+}
+
+#arrowWrapper3 svg line.blue{
+  stroke: #2b2921;
+}
+
+/* BOTAO DE ENGRENAGEM */
+
+.td-gear{
+  cursor: pointer;
+
+}
+
+.gear{
+  line-height: 18px;
+  height: 10px;
+  position: relative;
+  top:0.3px;
+  left: 1.8px;
+  cursor: pointer;
+  z-index: 200;
+  transition: transform 0.3s ease;
+}
+
+.rotated {
+  transform: rotate(180deg);
+}
+
+/* BOTAO DE INVERTER */
+#buttonFlip {
+  line-height: 18px;
+  height: 6px;
+  width: 10px;
+  padding-top: 2.6px;
+  padding-bottom: 2px;
+  cursor: pointer;
+  border-radius: 20px;
+  position: relative;
+  top: -2px;
+  left: -1px;
+  background-color: #ffffff;
+}
+
+.colorpreto{
+  background-color: #000000 !important;
+}

@@ -1,0 +1,16 @@
+button{
+  cursor: pointer;
+}
+
+.direito{
+
+  display: flex;
+  flex-direction:column;
+  position: relative;
+  padding-right: 2rem;
+  height: 85vh !important;
+  max-width: 40vw !important;
+  border-radius: 10px;
+}
+
+

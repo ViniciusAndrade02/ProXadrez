@@ -1,0 +1,19 @@
+
+.ShowOfPosicao{
+
+  display: grid;
+  display: none;
+  height: 90vh;
+  max-width: 42vw !important;
+  padding-left: 2rem;
+  border-radius: 0 0 10px 10px;
+  background-color: rgb(25, 23, 24,0.9);
+}
+
+.aparecerconteudo{
+  display: block;
+}
+
+.desaparecerconteudo{
+  display: none;
+}

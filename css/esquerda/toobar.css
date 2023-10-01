@@ -1,0 +1,309 @@
+.cabecalho{
+  display: flex;
+  justify-content: space-between;
+  grid-column: 1/3;
+  height: 3.5rem;
+  max-width: 100%;
+  background-color: rgb(25, 23, 24,0.4);
+
+}
+
+/*VOLTAR/RESETAR LANCE*/
+
+
+.toolbar {
+  display: flex;
+  height: 50px;
+}
+
+.OpcaodeLance{
+
+  display: flex;
+  flex-direction: row;
+  height: 0vh;
+  max-width: 100%;
+  position: relative;
+  top: -12px;
+  left: 0px;
+  z-index: 1000;
+  opacity: 0.8;
+  padding-left: 140px;
+
+}
+
+.on,
+.off {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 6rem;
+  height: 3rem;
+  border-radius: 0px !important;
+  padding: 4px;
+  transition: 0.3s;
+
+}
+
+.on:hover {
+  background-color: rgba(230, 230, 230, 0.2);
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+.menuconfig{
+
+  position: relative;
+  top: 0rem !important
+}
+
+#buttonBack,
+#buttonForward
+{
+  line-height: 0px;
+}
+
+#buttonBack{
+
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+
+
+}
+
+#buttonBack p{
+
+  position: relative;
+  top: -2px;
+}
+
+#buttonForward{
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+#buttonForward p{
+
+  position: relative;
+  top: -2px;
+}
+
+.reset{
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  position: relative;
+  width: 6rem ;
+  height: 3rem;
+  border-radius: 0px !important;
+  padding: 4px;
+  transition: 0.3s;
+}
+
+.reset:hover{
+
+  background-color: rgba(230, 230, 230, 0.2);
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+.reset p{
+  position: relative;
+  top: -2px;
+}
+
+
+.flip{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  position: relative;
+  width: 6rem ;
+  height: 3rem;
+  border-radius: 0px !important;
+  padding: 4px;
+  transition: 0.3s;
+}
+
+.flip:hover{
+  background-color: rgba(230, 230, 230, 0.2);
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+.flip p{
+  position: relative;
+  top: -2px;
+}
+
+#buttonBack p , #buttonForward p , .reset p,.flip p{
+  font-size: 16px;
+  font-weight: 600
+}
+
+
+
+.cabecalho-direita{
+  display: flex;
+  align-items: center;
+  position: relative;
+  top: -2px;
+  padding-right: 7rem;
+}
+
+.edit{
+  padding: 20px 35px;
+
+}
+
+.edit:hover{
+  background-color: rgba(230, 230, 230, 0.2);
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+[data-li]{
+  position: relative;
+}
+
+[data-li] .dropdownmenu{
+  display: none;
+}
+
+[data-li]:hover .dropdownmenu{
+  display: block;
+}
+
+.dropdownmenu{
+  position: absolute;
+  z-index: 200;
+  top: 50px;
+  left: 0px;
+  color: #696969;
+  border: 2px solid #7c7c7c;
+  width: 11rem;
+  
+}
+
+.item-fundo{
+  background-color: rgb(25, 23, 24,1);
+  padding: 8px 30px;
+  font-size: 16px;
+}
+
+.dropdownmenu li:hover{
+  color: rgb(255, 255, 255);
+  
+}
+
+
+
+[data-partida]{
+  position: relative;
+}
+
+[data-partida] .dropdownmenu-2, .pesquisar{
+  display: none;
+}
+
+[data-partida]:hover .dropdownmenu-2,
+[data-partida]:hover .pesquisar {
+  display: block;
+}
+
+
+
+.pesquisar{
+  padding-top: 0rem; 
+  max-width: 100%;
+
+}
+
+.InputPesquisa{
+
+  position: absolute;
+  top: -0rem !important;
+  left: -2.3rem !important;
+  height: 4rem !important;
+  width: 15rem !important;
+  background-color: #2f3032;
+  z-index: 400 !important;
+}
+
+
+
+
+
+
+
+
+
+
+#buttonGo {
+  top: 2px;
+  right: 1px;
+  background-color: #1d1e22;
+  width: 40px;
+  height: 16px;
+  padding: 2px 4px 6px 4px;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+#buttonGo:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+#buttonGo {
+  fill: #ffffff;
+}
+
+.down {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+
+#buttonStm {
+  width: 9px;
+  height: 9px;
+  padding: 5.75px 4px;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+#buttonStm div {
+  width: 9px;
+  height: 9px;
+  border-radius: 4.5px;
+}
+
+#buttonStm:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+#buttonStm.white div,
+#buttonStm.white:hover div {
+  background-color: #ffffff;
+}
+
+#buttonStm.black div,
+#buttonStm.black:hover div {
+  background-color: #000000;
+}
+
+#buttonStaticSortByValue,
+#buttonStaticSortByChange,
+#buttonMovesPv {
+  cursor: pointer;
+}
+
+#buttonStaticSortByValue:hover,
+#buttonStaticSortByChange:hover,
+#buttonMovesPv:hover {
+  color: white;
+}

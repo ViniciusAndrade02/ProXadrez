@@ -1,0 +1,290 @@
+img {
+  display: block;
+  max-width: 100%;
+  height: 100%;
+
+}
+
+
+.ShowOfAberturas{
+
+  display: grid;
+  display: none;
+  height: 40rem;
+  max-width: 42vw !important;
+  padding-left: 2rem;
+  background-color: rgb(25, 23, 24,0.9);
+  border-radius: 0 0 10px 10px;
+
+
+}
+
+.P-histLances{
+
+  display: inline-block;
+  position: relative;
+  margin-top: 1rem;
+  font-size: 24px;
+  max-width: 50.2rem;
+}
+
+.boxHistory{
+
+  border: solid black 2px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  margin-right: 2rem;
+  position: relative;
+  background-color: rgb(29, 30, 34,0.5);
+  max-width: 100%;
+  min-height: 64px;
+}
+
+
+
+#NomeAbertura{
+
+  font-size: 24px !important;
+}
+
+
+
+.abertura{
+
+  display: none;
+  opacity: 1 !important;
+}
+
+
+.abertura iframe{
+  display: block;
+  max-width: 100%;
+  height: 38vh;
+  width: 75.2vh;
+  border-radius: 10px 0 0 15px;
+  border: solid black 2px;
+  margin-bottom: 10px;
+
+}
+
+.abertura iframe:last-child{
+  margin-bottom: 0px;
+  padding-top: 0px;
+}
+
+.ativo {
+  height: 20rem;
+  max-width: 40rem;
+  margin-right: 2rem;
+  overflow-y: scroll;
+  object-fit: cover;
+  display: inline-block;
+  animation: animation 2s forwards;
+}
+
+.ativo::-webkit-scrollbar{
+  width: 13px;
+}
+.ativo::-webkit-scrollbar-thumb{
+  background-color: rgb(206, 201, 201);
+
+  border: 3px solid #282627;
+  border-radius: 6px;
+}
+.ativo::-webkit-scrollbar-track{
+  background: #282627;
+}
+
+@keyframes animation {
+  from {
+    opacity: 0;
+    transform: translate3d(-100px,0,0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0,0,0);
+  }
+}
+
+#NomeAbertura{
+
+  margin-bottom: 1rem;
+}
+  
+
+
+/* Move list */
+
+.boxLances{
+
+  border: solid black 1px;
+  border-radius: 3px;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  margin-right: 2rem;
+  position: relative;
+  background-color: rgb(29, 30, 34,0.5);
+  max-width: 100%;
+  height: 8.4rem;
+
+}
+
+#movesHeader{
+
+  margin-top: 0.4rem;
+  font-size: 1rem;
+}
+#moves {
+  line-height: 17px;
+  font-size: 11px;
+  font-weight: 700;
+  position: relative;
+  top: 0rem !important;
+  font-size: 1rem !important;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+}
+
+#moves .positionStatus {
+  color: white;
+  display: inline-block;
+  padding: 4px 8px;
+  border: 1px solid black;
+  box-shadow: inset 0 0 8px black;
+}
+
+#moves .line {
+  width: 100%;
+  min-width: 281px;
+}
+
+#movesHeader {
+  font-size: 11px;
+  font-weight: 900;
+  line-height: 30px;
+  top: -7px;
+  height: 30px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  border-top: solid 1px black;
+  background-color: #000000;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+#movesHeader .san {
+  display: inline-block;
+  width: 52px;
+  padding-left: 16px;
+}
+
+#movesHeader .eval {
+  display: inline-block;
+  text-align: center;
+  width: 115px;
+}
+
+#movesHeader .pv {
+  display: inline-block;
+  width: 58px;
+}
+
+
+.line:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.2);
+  height: 34px !important;
+}
+
+.line {
+  display: flex;
+  align-items: center;
+  line-height: 1rem;
+  margin-top: 0.5rem;
+  height: 20px;
+  cursor: pointer;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.line .san {
+  display: inline-block;
+  width: 52px;
+  padding-left: 40px;
+  position: absolute;
+  left: 0;
+}
+
+.line .eval {
+  display: inline-block;
+  width: 115px;
+  text-align: center;
+  position: absolute;
+  left: 68px;
+}
+
+.line .eval .numleft {
+  display: inline-block;
+  min-width: 35px;
+  text-align: right;
+}
+
+.line .eval .numright {
+  display: inline-block;
+  min-width: 40px;
+  text-align: left;
+}
+
+.line .depth {
+  display: inline-block;
+  right: 0;
+  position: absolute;
+  width: 37px;
+  text-align: center;
+}
+
+.circle {
+  
+  width: 12px;
+  height: 4px;
+  position: relative;
+  top:2px;
+  left: 0.6rem;
+}
+
+
+.line .pv {
+  display: inline-block;
+  left: 183px;
+  right: 37px;
+  position: absolute;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.circle.ok {
+  background-color: #008800;
+}
+
+.circle.mi {
+  background-color: #bb8800;
+}
+
+.circle.bl {
+  background-color: #bb0000;
+}
+
+.line:hover {
+  background-color: #333a42;
+}
+
+.aparecerconteudo{
+  display: block;
+}
+
+.desaparecerconteudo{
+  display: none;
+}

@@ -1,0 +1,13 @@
+@import './styles.css';
+@import './oppenings.css';
+
+@import './direita/direito.css';
+@import './direita/navegation.css';
+@import './direita/abertura.css';
+@import './direita/lapidacao.css';
+@import './direita/posicao.css';
+
+@import './esquerda/esquerda.css';
+@import './esquerda/tabuleiro.css';
+@import './esquerda/barrinha.css';
+@import './esquerda/toobar.css'

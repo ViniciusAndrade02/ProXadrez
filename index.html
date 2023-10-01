@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/svg" sizes="32x32" href="BoldChess-Logo.svg">
+    <link rel="icon" type="image/svg" sizes="96x96" href="BoldChess-Logo.svg">
+    <link rel="stylesheet" href="./css/all.css">
+    <title>Pró-Xadrez</title>
+    <script>
+        var _mobile = false;
+        if (navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/BlackBerry/i) || navigator.userAgent.match(/Windows Phone/i) || window.location.href.match(/([?&]mobile=1(&|#|$))/i)) {
+            if (!window.location.href.match(/([?&]mobile=0(&|#|$))/i)) {
+                document.write('<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1"/>');
+                _mobile = false;
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <div id="fen" style="display:none;">rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1</div>
+
+    <!-- CONTAINER-->
+    <div id="container" class="background1 ">
+        
+        <div class="cabecalho">
+
+            <div class="OpcaodeLance" style="display: block;">
+                <div id="logo" style="display: block;">
+                    <div id="toolbar" class="toolbar">
+
+                        <div class="espacamento">
+                        </div>
+
+                        <div id="buttonBack" class="off" title="Go back">
+                            <p>Voltar</p>
+                        </div>
+    
+                        <div id="buttonForward" class="off" title="Go forward">
+                            <p>Avançar</p>
+                        </div>
+    
+                        <div class="reset">
+                            <p>Resetar</p>
+                        </div>
+    
+                        <div class="flip ">
+                            <p>Inverter</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="cabecalho-direita">
+                <div data-li class="edit">
+                    <ul>
+                        <li class="">Fundo</li>
+                        <ul class="dropdownmenu">
+                            <li class="item-fundo">Madeira Escuro</li>
+                            <li class="item-fundo">Madeira Clara</li>
+                            <li class="item-fundo">Universo</li>
+                            <li class="item-fundo">Colorido</li>
+                            <li class="item-fundo">Ondas</li>
+                        </ul>
+                    </ul>
+                </div>
+                <div class="edit">
+
+                    <div data-partida class="Partida">
+                        <p class="dropdown-2">Colocar Partida</p>
+
+                        <div class="pesquisar">
+                            <form id="simpleSearch" >
+                                <input class="InputPesquisa" name="search" placeholder="Enter FEN, PGN or command" id="searchInput" type="search">
+                                <div id="buttonGo" title="Load FEN, PGN or command" style="display:block;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                                        <path d="M15.707 7.293l-6-6a1 1 0 0 0-1.414 1.414L12.586 7H1a1 1 0 0 0 0 2h11.586l-4.293 4.293a1 1 0 1 0 1.414 1.414l6-6a1 1 0 0 0 0-1.414z" opacity="0.6" />
+                                    </svg>
+                                </div>
+                            </form>
+                        </div> 
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ESQUERDO-->
+        <div class="col left" id="colLeft">
+            <div class="cloud">
+                <img src="https://demos.creative-tim.com/paper-kit-react/static/media/clouds.3c700c13.png" alt="" class="img_cloud">
+            </div>
+
+            <div id="areaTabuleiro">
+                
+                <div id="wb"></div>
+                <div class=" BorderBox tabuleiro"  id="wChessboard">
+
+                    <div style="display: none;" id="positionInfo" class="boxTop">
+                    </div>
+
+                    <div id="boxBoardOuter" class="camada">
+                        <div id="boxBoard" class="play"> <!--TABULEIRO-->
+
+                            <div id="boardWrapper" >
+                                <div id="arrowWrapper1" style="display: none;">
+                                    <svg height="100%" width="100%">
+                                        <defs>
+                                            <marker id="markerArrow1" markerWidth="13" markerHeight="13" orient="auto" refX="3" refY="3">
+                                                <path d="M1,1 L1,5 L4,3 Z" style="fill:transparent;"></path>
+                                            </marker>
+                                        </defs>
+                                        <line  style="stroke:transparent;stroke-width:6;marker-end:url(#markerArrow1);" y2="0" y1="0" x1="0" x2="0"></line>
+                                    </svg>
+                                </div>
+                                <div  id="arrowWrapper2">
+                                    <svg height="100%" width="100%">
+                                        <defs>
+                                            <marker id="markerArrow2" markerWidth="13" markerHeight="13" orient="auto" refX="3" refY="3">
+                                                <path d="M1,1 L1,5 L4,3 Z"></path>
+                                            </marker>
+                                        </defs>
+                                        <line style="stroke-width:4;marker-end:url(#markerArrow2);" y2="0" y1="0" x1="0" x2="0"></line>
+                                    </svg>
+                                </div>
+                                <div id="arrowWrapper3" >
+                                    <svg height="100%" width="100%">
+                                        <defs>
+                                            <marker id="markerArrow3" markerWidth="12" markerHeight="13" orient="auto" refX="3" refY="3">
+                                                <path d="M1,1 L1,5 L4,3 Z"></path>
+                                            </marker>
+                                        </defs>
+                                        <line class="seta" style="  stroke-width:5;marker-end:url(#markerArrow3);" y2="0" y1="0" x1="0" x2="0"></line>
+                                    </svg>
+                                </div>
+                                <table  id="cbTable">
+                                    <tbody >
+                                        <tr class="border-superior">
+                                            <td class="td-gear">
+                                                <img class="gear"  src="./img/Gear.svg" alt="">
+                                            </td>
+                                            <td style="display: none;">a</td>
+                                            <td style="display: none;" >b</td>
+                                            <td style="display: none;" >c</td>
+                                            <td style="display: none;" >d</td>
+                                            <td style="display: none;" >e</td>
+                                            <td style="display: none;" >f</td>
+                                            <td style="display: none;" >g</td>
+                                            <td style="display: none;" >h</td>
+                                            <td style="display: none;"> <!-- YUIIAHJSFCJFUHFUIBFHFHIUFH-->
+                                                <div id="buttonStm" class="white" title="Change side to move">
+                                                    <div></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td >8</td>
+                                            <td colspan="8" rowspan="8" class="cbCell">
+                                                <div id="chessboard1" class="cb"></div>
+                                            </td>
+                                            <td style="display: none;">8</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="display: none;">7</td>
+                                            <td>7</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="display: none;">6</td>
+                                            <td>6</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="display: none;">5</td>
+                                            <td>5</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="display: none;">4</td>
+                                            <td>4</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="display: none;">3</td>
+                                            <td>3</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="display: none;">2</td>
+                                            <td>2</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="display: none;">1</td>
+                                            <td>1</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="letra-tabuleiro"></td>
+                                            <td class="letra-tabuleiro">a</td>
+                                            <td class="letra-tabuleiro">b</td>
+                                            <td class="letra-tabuleiro">c</td>
+                                            <td class="letra-tabuleiro">d</td>
+                                            <td class="letra-tabuleiro">e</td>
+                                            <td class="letra-tabuleiro">f</td>
+                                            <td class="letra-tabuleiro">g</td>
+                                            <td class="letra-tabuleiro">h</td>
+                                            <td>
+                                                <div id="buttonFlip" class="ColorInverter " title="inverter">
+
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div id="materialWrapper"></div>
+                            <div  style="display: none;" id="namesWrapperTop"></div>
+                            <div style="display: none;" id="namesWrapperBottom"></div>
+
+                            <div class="evaluation-bar">
+                                <div class="evaluation-fill" id="evaluation-fill"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- DIREITO-->
+    <div class="col right direito" id="colRight">
+            
+        <div class="navegation">
+
+            <div class="Nav-opcao AtivoNav border1">
+                <img class="img-tab" src="./img/Icones-navegacao/youtube-color.svg" alt="">
+                <span class="span-nav span-youtu">Aberturas</span>
+            </div>
+
+            <div class="Nav-opcao">
+                <img class="img-tab" src="./img//Icones-navegacao/treinar.svg" alt="">
+                <span class="span-nav">Lapidação</span>
+            </div>
+
+            <div class="Nav-opcao border3">
+                <img class="img-tab" src="./img/Icones-navegacao/posicao.svg" alt="">
+                <span class="span-nav">Posição</span> 
+            </div>
+        </div>
+
+<!-- ABERTURAS -->
+        <div class="ShowOfAberturas aparecerconteudo">
+
+            <h1 class="P-histLances">Histórico de Lances</h1>
+
+            <!--  HISTÓRICO DO LANCE -->
+            <div class="boxHistory" style="display: block;" id="wHistory">
+                <div class="boxMid" id="history"></div>
+            </div>
+
+            <!-- NOME DA ABERTURA -->
+            <div class="nomeabertura" style="display: block;">
+                <h1 id="NomeAbertura">ABERTURA</h1>
+            </div>
+
+            <!-- MOSTRAR VIDEO-->
+            <div class="abertura ruylopes" >
+
+            </div>
+
+            <div class="abertura gambitopeaodorei" >
+
+            </div>
+
+            <div class="abertura inglesa" >
+
+            </div>
+             
+
+                        <!--  LANCES NO BOOT -->
+            <div style="display: none;" class="boxLances" id="wMoves">
+                <div id="movesInfo" ></div>
+                    <div id="movesHeader" >
+                        <div class="san" >Movimento</div>
+                        <div class="eval" >Evaluation</div>
+                        <div class="pv" id="buttonMovesPv">PV</div>
+            
+                    </div>
+                <div id="moves" class="boxMid jogadas"></div>
+            </div>
+
+        </div>
+
+<!-- LAPIDAÇÃO-->
+        <div class="ShowofTreinamento ">
+
+            <!--LAPIDAÇÃO-->
+            <div class="trein-jogos">
+
+                <div class="trein-titulo">
+                    <h1 class="">Pronto para treinar?</h1>
+                </div>
+
+                <div class="jogos">
+                    <div class="trein-esquerda">
+
+                        <div class="buttomBot">
+
+                            <div class="buttomBot-numero">
+                                <p>1</p>
+                            </div>
+
+                            <div class="buttomBot-abertura">
+                                <p>Abertura escandinava</p>
+                                <p>1.e4 e5 2. Nf3 Nc6 3. d4 exd4</p>
+                            </div>
+                        </div>
+
+                        <div class="buttomBot">
+
+                            <div class="buttomBot-numero">
+                                <p>2</p>
+                            </div>
+
+                            <div class="buttomBot-abertura">
+                                <p>Londrina</p>
+                                <p>1.d4 d5 2. Nf3 Nf6 3. Bf4</p>
+                            </div>
+                        </div>
+
+                        <div class="buttomBot">
+
+                            <div class="buttomBot-numero">
+                                <p>3</p>
+                            </div>
+
+                            <div class="buttomBot-abertura">
+                                <p>Peão da Dama</p>
+                                <p>1.d4 d5 2.c4</p>
+                            </div>
+                        </div>
+
+                        <div class="buttomBot">
+
+                            <div class="buttomBot-numero">
+                                <p>4</p>
+                            </div>
+
+                            <div class="buttomBot-abertura">
+                                <p>Ruy Lopez</p>
+                                <p>e4 e5 2. Nf3 Nc6 3. Bb5</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!--DESAFIOS-->
+            <div class="1 Challenge desafios-Escandinava desaparecerconteudo">
+                <div class="voltar">
+                    <img src="./img/lapidacaoBoot/voltar.svg" alt="">
+                </div>
+
+                <div class="desafios-titulo">
+                    <h1>Reino da Escandinava</h1>
+                </div>
+
+                <div class="desafios">
+                    <button onclick="PreparerBoot(0,'b')">Jogar bot nivel 0 BRANCO</button>
+                    <button onclick="PreparerBoot(2,'b')">Jogar bot nivel 0 BRANCO</button>
+                    <button onclick="PreparerBoot(12,'b')">Jogar bot nivel 0 BRANCO</button>
+
+                </div>
+            </div>
+
+            <div class="2 Challenge desafios-Londrina desaparecerconteudo">
+                <div class="voltar">
+                    <img src="./img/lapidacaoBoot/voltar.svg" alt="">
+                </div>
+
+                <div class="desafios-titulo">
+                    <h1>Reino da Londrina</h1>
+                </div>
+
+                <div class="desafios">
+                    <button onclick="PreparerBoot(0,'b')">Jogar bot nivel 0 BRANCO</button>
+                    <button onclick="PreparerBoot(2,'b')">Jogar bot nivel 0 BRANCO</button>
+                    <button onclick="PreparerBoot(5,'b')">Jogar bot nivel 0 BRANCO</button>
+
+                </div>
+            </div>
+
+            <div class="3 Challenge desafios-peaodadama desaparecerconteudo">
+                <div class="voltar">
+                    <img src="./img/lapidacaoBoot/voltar.svg" alt="">
+                </div>
+
+                <div class="desafios-titulo">
+                    <h1>Reino da Peão da Dama</h1>
+                </div>
+
+                <div class="desafios">
+                    <button onclick="PreparerBoot(0,'b')">Jogar bot nivel 0 BRANCO</button>
+                    <button onclick="PreparerBoot(2,'b')">Jogar bot nivel 0 BRANCO</button>
+                    <button onclick="PreparerBoot(5,'b')">Jogar bot nivel 0 BRANCO</button>
+
+                </div>
+            </div>
+
+            <div class="4 Challenge desafios-peaodadama desaparecerconteudo">
+                <div class="voltar">
+                    <img src="./img/lapidacaoBoot/voltar.svg" alt="">
+                </div>
+
+                <div class="desafios-titulo">
+                    <h1>Reino Ruy Lopez</h1>
+                </div>
+
+                <div class="desafios">
+                    <button onclick="PreparerBoot(0,'b')">Jogar bot nivel 0 BRANCO</button>
+                    <button onclick="PreparerBoot(2,'b')">Jogar bot nivel 0 BRANCO</button>
+                    <button onclick="PreparerBoot(5,'b')">Jogar bot nivel 0 BRANCO</button>
+
+                </div>
+            </div>
+
+        </div>
+
+<!-- POSICAO -->
+        <div class="ShowOfPosicao" >
+
+            <h1 class="P-histLances">COPIAR OS LANCES</h1>
+
+        </div>
+
+            <!-- ESTATISTICAS DA POSICAO-->
+            <div class="box" style="height:155px;background-color: #697686; display: none;">
+                <div style="display: none">Evaluation Graph</div>
+                <div id="graphWrapper" class="boxGraph">
+                    <canvas id="graph">Your browser does not support the HTML5 canvas tag.</canvas>
+                </div>
+            </div>
+
+            <!-- EDITAR O TABULEIRO -->
+            <div class="box " style="height:122px;min-height:122px;min-width:298px;display:none;" id="wEdit">
+                <div class="boxTop">Edit tools</div>
+                <div id="editWrapperOuter" class="boxMid">
+                    <div id="editWrapper">
+                        <div class="cb">
+                            <div style="left: 0px; top: 0px;" class="l S"></div>
+                            <div style="left: 40px; top: 0px;" class="d p"></div>
+                            <div style="left: 80px; top: 0px;" class="l n"></div>
+                            <div style="left: 120px; top: 0px;" class="d b"></div>
+                            <div style="left: 160px; top: 0px;" class="l r"></div>
+                            <div style="left: 200px; top: 0px;" class="d q"></div>
+                            <div style="left: 240px; top: 0px;" class="l k"></div>
+                            <div style="left: 0px; top: 40px;" class="d -"></div>
+                            <div style="left: 40px; top: 40px;" class="l P"></div>
+                            <div style="left: 80px; top: 40px;" class="d N"></div>
+                            <div style="left: 120px; top: 40px;" class="l B"></div>
+                            <div style="left: 160px; top: 40px;" class="d R"></div>
+                            <div style="left: 200px; top: 40px;" class="l Q"></div>
+                            <div style="left: 240px; top: 40px;" class="d K"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+                <!-- NADA -->
+        <div style="display: none;">
+            <!-- NADA -->
+            <div class="box" style="height:115px;min-height:79px;display:none;" id="wOpening">
+                <div class="boxTop">Opening</div>
+                <div id="openingHeader">
+                    <div class="name">ECO code / Name</div>
+                    <div class="score">Score</div>
+                    <div class="popularity">Popularity</div>
+                    <div class="moves">Moves</div>
+                </div>
+                <div id="opening" class="boxMid"></div>
+            </div>
+
+            <div id="buttonMenu"  style="display: none;">
+            </div>
+            
+            <div id="buttonRevert" style="display: none;">
+            </div>
+
+            <div style="display: none;" id="btn" data-clipboard-text="">
+                <button class="d">copiar</button><br>
+            </div>
+
+            <!-- NADA -->
+            <div class="box" style="height:115px;min-height:79px;display:none;" id="wStatic">
+                <div id="staticInfo" class="boxTop">Static Evaluation</div>
+                <div id="staticHeader">
+                    <div class="group">Group</div>
+                    <div class="name">Evaluation term</div>
+                    <div class="eval" id="buttonStaticSortByValue">Value</div>
+                    <div class="rel" id="buttonStaticSortByChange">Change</div>
+                </div>
+                <div id="static" class="boxMid"></div>
+            </div>
+
+            <!-- NADA -->
+            <div class="box " style="height:115px;min-height:79px;display:none;" id="wLczero">
+                <div id="lczeroInfo" class="boxTop">LcZero - Neural Network</div>
+                <div id="lczeroHeader">
+                    <div class="san">Move</div>
+                    <div class="policy">Policy</div>
+                    <div class="eval">Parent value</div>
+                </div>
+                <div id="lczero" class="boxMid"></div>
+                <div id="lczeroFooter" class="footer">Powered by <a href="https://github.com/frpays/lc0-js/">LC0-js</a>, <a href="https://github.com/LeelaChessZero/">LeelaChessZero</a> and <a href="https://www.tensorflow.org/js/">TensorFlow.js</a></div>
+            </div>
+        </div>
+
+        <div id="menu">
+
+        </div>
+        
+    </div>
+    <div id="tooltip" style="display:none;"></div>
+    <div id="dragPiece" class="cb"></div>
+
+
+        <!-- 2. Include library -->
+        <script src="./copiar/node_modules/clipboard/dist/clipboard.min.js"></script>
+
+        <!-- 3. Instantiate clipboard by passing a HTML element -->
+        <script src="scripts.js"></script>
+
+    <script type='application/javascript' src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.14.1/dist/tf.min.js"></script>
+    <script type='application/javascript' src="https://cdn.jsdelivr.net/pako/1.0.3/pako.min.js"></script>
+    <script type='application/javascript' src="https://cdn.rawgit.com/dcodeIO/protobuf.js/6.8.8/dist/protobuf.min.js"></script>
+    <script type='application/javascript' src="lc0main.js"></script>
+    <script type='application/javascript' src="scripts.js"></script>
+    <script type="application/javascript" src="addmore.js"></script>
+</body>
+
+</html>
