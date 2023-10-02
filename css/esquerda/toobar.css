@@ -185,20 +185,107 @@
   left: 0px;
   color: #696969;
   border: 2px solid #7c7c7c;
-  width: 11rem;
+  width: 7rem;
+  
   
 }
 
 .item-fundo{
+  position: relative;
   background-color: rgb(25, 23, 24,1);
-  padding: 8px 30px;
+  padding: 8px 0px;
   font-size: 16px;
+  text-align: center;
 }
 
-.dropdownmenu li:hover{
+
+.item-fundo:hover {
   color: rgb(255, 255, 255);
+  background-color: rgb(42, 39, 41);
   
 }
+
+.drop-2 {
+  display: none;
+}
+
+.item-fundo:hover + ul.drop-2,.drop-2:hover {
+  display: block ;
+  
+} 
+
+.drop-2{
+
+  position: absolute;
+  z-index: 200;
+  top: 0px;
+  left: 110px;
+  color: #696969;
+  border: 2px solid #7c7c7c;
+  width: 7rem;
+}
+
+.drop-2 li{
+  position: relative;
+  background-color: rgb(25, 23, 24,1);
+  padding: 8px 0px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.drop-2 li:hover{
+  color: rgb(255, 255, 255);
+  background-color: rgb(42, 39, 41);
+}
+
+.item-outro{
+
+  position: relative;
+  background-color: rgb(25, 23, 24,1);
+  padding: 8px 0px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.item-outro:hover{
+  color: rgb(255, 255, 255);
+  background-color: rgb(42, 39, 41);
+}
+
+.drop-3 {
+  display: none;
+}
+
+.item-outro:hover + ul.drop-3,.drop-3:hover {
+  display: block ;
+  
+} 
+
+.drop-3{
+
+  position: absolute;
+  z-index: 200;
+  top: 0px;
+  left: 110px;
+  color: #696969;
+  border: 2px solid #7c7c7c;
+  width: 7rem;
+}
+
+.drop-3 li{
+  position: relative;
+  background-color: rgb(25, 23, 24,1);
+  padding: 8px 0px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.drop-3 li:hover{
+  color: rgb(255, 255, 255);
+  background-color: rgb(42, 39, 41);
+}
+
+
 
 
 

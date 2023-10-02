@@ -45,34 +45,89 @@ dl {
 }
 
 .background1{
-  background-image: url('../img/background/Madeira\ Vermelha\ 1.png');
+  background-image: url('../img/background/madeira/madeira2.jpg');
   background-size: cover;
   background-repeat: no-repeat;
 }
 
-.background2{
-  background-image: url('../img/background/universo.jpg');
+.madeira0{
+  background-image: url('../img/background/madeira/madeira.jpg');
   background-size: cover;
   background-repeat: no-repeat;
 }
 
-.background3{
-  background-image: url('../img/background/Fundo\ Colorido.jpg');
+.madeira1{
+  background-image: url('../img/background/madeira/madeira2.jpg');
   background-size: cover;
   background-repeat: no-repeat;
 }
 
-.background4{
-  background-image: url('../img/background/Fundo\ mar.jpg');
+.madeira2{
+  background-image: url('../img/background/madeira/madeira3.jpg');
   background-size: cover;
   background-repeat: no-repeat;
 }
 
-.background5{
-  background-image: url('../img/background/Fundo\ Madeira.jpg');
+.madeira3{
+  background-image: url('../img/background/madeira/madeira4.jpg');
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+.madeira4{
+  background-image: url('../img/background/madeira/madeira5.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.madeira5{
+  background-image: url('../img/background/madeira/madeira6.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.outro{
+  background-image: url('../img/background/outro/cerrado.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.outro1{
+  background-image: url('../img/background/outro/Colorido.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.outro2{
+  background-image: url('../img/background/outro/cubos.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.outro3{
+  background-image: url('../img/background/outro/ilha.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.outro4{
+  background-image: url('../img/background/outro/natureza.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.outro5{
+  background-image: url('../img/background/outro/roxo.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.outro6{
+  background-image: url('../img/background/outro/universo.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 
 
 

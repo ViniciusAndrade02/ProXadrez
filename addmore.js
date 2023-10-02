@@ -103,27 +103,54 @@ animationgear.addEventListener('click',gear)
 
 //Alterar Fundo
 
-const itemFundo = document.querySelectorAll('.item-fundo')
+const itemFundo = document.querySelectorAll('.fundo')
 const container = document.getElementById('container')
 
 
 function alterarfundo(index){
   container.classList.remove('background1')
-  container.classList.remove('background2')
-  container.classList.remove('background3')
-  container.classList.remove('background4')
-  container.classList.remove('background5')
+  container.classList.remove('madeira0')
+  container.classList.remove('madeira1')
+  container.classList.remove('madeira2')
+  container.classList.remove('madeira3')
+  container.classList.remove('madeira4')
+  container.classList.remove('madeira5')
+  container.classList.remove('outro')
+  container.classList.remove('outro2')
+  container.classList.remove('outro3')
+  container.classList.remove('outro4')
+  container.classList.remove('outro5')
+  container.classList.remove('outro6')
+  container.classList.remove('outro7')
 
   if(index == 0 ){
-    container.classList.add('background1')
+    container.classList.add('madeira0')
   }else if(index == 1){
-    container.classList.add('background5')
+    container.classList.add('madeira1')
   }else if(index ==2){
-    container.classList.add('background2')
+    container.classList.add('madeira2')
   }else if(index ==3){
-    container.classList.add('background3')
+    container.classList.add('madeira3')
   }else if(index ==4){
-    container.classList.add('background4')
+    container.classList.add('madeira4')
+  }else if(index ==5){
+    container.classList.add('madeira5')
+  }else if(index ==6){
+    container.classList.add('outro')
+  }else if(index ==7){
+    container.classList.add('outro1')
+  }else if(index ==8){
+    container.classList.add('outro2')
+  }else if(index ==9){
+    container.classList.add('outro3')
+  }else if(index ==10){
+    container.classList.add('outro4')
+  }else if(index ==11){
+    container.classList.add('outro5')
+  }else if(index ==12){
+    container.classList.add('outro6')
+  }else if(index ==13){
+    container.classList.add('outro7')
   }
 }
 
