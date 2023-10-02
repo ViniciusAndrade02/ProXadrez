@@ -232,9 +232,9 @@ dl {
   opacity: 0.8;
   width: 38px !important;
   height: 38px !important;
-  border-radius: 5px;
-  background-color: #522301;
-  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 0px;
+  background-color: rgb(54, 105, 45);
+  border: 1px solid #556f40;
   background-repeat: no-repeat;
   background-position: center;
 
@@ -242,17 +242,31 @@ dl {
 
 .cb > .h1:before {
   position: absolute;
-  content: "";
+  content: "lhggygtt";
   background-color: transparent;
   display: block;
-  width: 38px !important;
-  height: 38px !important;
-  border: 1px solid rgba(0, 0, 0, 0.5);
-  border-radius: 10px;
+  cursor: pointer;
+  width: 40px !important;
+  height: 40px !important;
+  border: 0px solid transparent;
   background-repeat: no-repeat;
   background-position: center;
-  box-shadow: inset 2px 2px 20px rgba(0, 0, 0, 0.5);
+  border-radius: 40%; /* Tornar a div em uma bola perfeita */
+  box-shadow: inset  0px 0px 50px rgba(103, 75, 75, 0.9); /* Cria uma sombra que parece uma bola */
 
+}
+
+.cb > .h1:hover::before {
+
+  position: absolute;
+  content: "lhggygtt";
+  background-color: transparent;
+  display: block;
+  border: 0px solid transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 40%; /* Tornar a div em uma bola perfeita */
+  box-shadow: inset  0px 0px 50px  rgb(54, 105, 45,0.9); /* Cria uma sombra que parece uma bola */
 }
 
 .cb>.h2:before {
@@ -271,13 +285,14 @@ dl {
 .cb > .h3:before {
   content: "";
   background-color: transparent;
-  display: block;
-  width: 37px !important;
-  height: 37px !important;
-  border: 2px solid #FFA804;
+  display: block ;
+  width: 40px !important;
+  height: 40px !important;
   border-radius: 100px;
   background-repeat: no-repeat;
   background-position: center;
+  border-radius: 60%; /* Tornar a div em uma bola perfeita */
+  box-shadow: inset 0px 0px 0px 2px rgb(255, 168, 4,1);
 
 }
 
@@ -924,10 +939,11 @@ dl {
   position: absolute;
   pointer-events: none;
   display: none;
-  filter: drop-shadow(-1px -1px 1px white) drop-shadow(1px 1px 1px black);
-  opacity: 0.5;
+  box-shadow: 0px 0px 0px green; /* Substitua "green" pela cor desejada */
+  opacity: 0.8;
   z-index: 4;
 }
+
 
 #arrowWrapper2 svg {
   opacity: 0.66;
@@ -943,6 +959,7 @@ dl {
 
 
 #arrowWrapper3 svg line {
+  
   stroke: #FFA802;
 }
 
@@ -950,6 +967,22 @@ dl {
   fill:#FFA802;
 }
 
+.Arrow3Red svg line {
+  
+  stroke: #9A493B !important;
+}
+
+.Arrow3Red svg defs marker {
+  fill:#9A493B !important;
+}
+
+.ArrowBlue svg line {
+  stroke: #48537A !important;
+}
+
+.ArrowBlue svg defs marker{
+  fill: #48537A !important;
+}
 
 
 /* Menu */
